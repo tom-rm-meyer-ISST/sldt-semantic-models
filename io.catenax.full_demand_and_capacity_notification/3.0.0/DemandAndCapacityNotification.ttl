@@ -177,7 +177,7 @@ A notification must be considered a Related Notification ID, if the following fi
 - Material Number Customer should be send if the customer is the sender
 - Material Number Supplier should be set if the sender is the supplier
 - Material Global Asset ID should be set if a digital twin exists"""@en ;
-   samm:properties ( [ samm:property :materialGlobalAssetId; samm:optional true ] [ samm:property :materialNumberCustomer; samm: optional true ] :materialNumberSupplier ) .
+   samm:properties ( [ samm:property :materialGlobalAssetId; samm:optional true ] [ samm:property :materialNumberCustomer; samm:optional true ] :materialNumberSupplier ) .
 
 :UserInputCharacteristic a samm:Characteristic ;
    samm:preferredName "User input characteristic"@en ;
