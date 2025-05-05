@@ -18,6 +18,7 @@ All notable changes to this model will be documented in this file.
 - leadingRootCauseEnumeration: added thirdPartyMisplanning, insolvency
 - Introduce a Set of Material Entities with materialNumberCustomer, materialNumberSupplier and materialGlobalAssetId
  - materialNumberSupplier and materialNumberCustomer use the PartIdCharacterstic from PartTypeInformation
+ - materialNumberSupplier is mandatory
  - materialGlobalAssetId uses the UUID characteristic directly
 
 ### Removed

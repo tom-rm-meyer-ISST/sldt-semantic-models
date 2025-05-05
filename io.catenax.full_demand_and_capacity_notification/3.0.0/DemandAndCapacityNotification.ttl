@@ -42,7 +42,7 @@
    samm:dataType :DCMNotification .
 
 :DCMNotification a samm:Entity ;
-   samm:properties ( :materialsAffected :relatedNotificationIds :notificationId :sourceDisruptionId :resolvingMeasureDescription :text :contentChangedAt :status :expectedEndDateOfEffect :startDateOfEffect :effect :leadingRootCause :affectedSitesRecipient :affectedSitesSender ) .
+   samm:properties ( [ samm:property :affectedSitesSender; samm:optional true ] [ samm:property :affectedSitesRecipient; samm:optional true ] :leadingRootCause :effect [ samm:property :text; samm:optional true ] :startDateOfEffect [ samm:property :expectedEndDateOfEffect; samm:optional true ] :status :contentChangedAt [ samm:property :sourceDisruptionId; samm:optional true ] :notificationId [ samm:property :relatedNotificationIds; samm:optional true ] [ samm:property :materialsAffected; samm:optional true ] [ samm:property :resolvingMeasureDescription; samm:optional true ] ) . 
 
 :materialsAffected a samm:Property ;
    samm:preferredName "Materials Affected"@en ;
@@ -177,7 +177,7 @@ A notification must be considered a Related Notification ID, if the following fi
 - Material Number Customer should be send if the customer is the sender
 - Material Number Supplier should be set if the sender is the supplier
 - Material Global Asset ID should be set if a digital twin exists"""@en ;
-   samm:properties ( [ samm:property :materialGlobalAssetId; samm:optional true ] [ samm:property :materialNumberCustomer; samm:optional true ] [ samm:property :materialNumberSupplier; samm:optional true ] [ samm:property :commodityCodes; samm:optional true ] ) .
+   samm:properties ( [ samm:property :materialGlobalAssetId; samm:optional true ] [ samm:property :materialNumberCustomer; samm: optional true ] :materialNumberSupplier [ samm:property :commodityCodes; samm:optional true ] ) .
 
 :UserInputCharacteristic a samm:Characteristic ;
    samm:preferredName "User input characteristic"@en ;
