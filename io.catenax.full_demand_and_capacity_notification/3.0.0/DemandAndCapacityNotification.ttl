@@ -177,7 +177,7 @@ A notification must be considered a Related Notification ID, if the following fi
 - Material Number Customer should be send if the customer is the sender
 - Material Number Supplier should be set if the sender is the supplier
 - Material Global Asset ID should be set if a digital twin exists"""@en ;
-   samm:properties ( [ samm:property :materialGlobalAssetId; samm:optional true ] [ samm:property :materialNumberCustomer; samm: optional true ] :materialNumberSupplier [ samm:property :commodityCodes; samm:optional true ] ) .
+   samm:properties ( [ samm:property :materialGlobalAssetId; samm:optional true ] [ samm:property :materialNumberCustomer; samm: optional true ] :materialNumberSupplier ) .
 
 :UserInputCharacteristic a samm:Characteristic ;
    samm:preferredName "User input characteristic"@en ;
@@ -208,42 +208,4 @@ A notification must be considered a Related Notification ID, if the following fi
    samm:see ext-information:manufacturerPartId ;
    samm:characteristic ext-information:PartIdCharacteristic ;
    samm:exampleValue "MNR-8101-ID146955.001" .
-
-:commodityCodes a samm:Property ;
-   samm:preferredName "Commodity Codes"@en ;
-   samm:description "Commodity Codes of a Material."@en ;
-   samm:characteristic :CommodityCodeSet .
-
-:CommodityCodeSet a samm-c:Set ;
-   samm:preferredName "Commodity Code Set"@en ;
-   samm:description "Set of the different Commodity Codes available for a material."@en ;
-   samm:dataType :Commodity .
-
-:Commodity a samm:Entity ;
-   samm:preferredName "Commodity"@en ;
-   samm:description "Commodity of a Material. "@en ;
-   samm:properties ( :commodityCode :commodityCodeType ) .
-
-:commodityCode a samm:Property ;
-   samm:preferredName "Commodity Code"@en ;
-   samm:description "Commodity Code following a specific Commodity Code Type."@en ;
-   samm:characteristic :CommodityCodeString ;
-   samm:exampleValue "420221" .
-
-:commodityCodeType a samm:Property ;
-   samm:preferredName "Commodity Type Code"@en ;
-   samm:description "Commodity code system the Commodity Code is used in."@en ;
-   samm:characteristic :CommodityTypeCodeEnum ;
-   samm:exampleValue "HS Code" .
-
-:CommodityCodeString a samm:Characteristic ;
-   samm:preferredName "Commodity Code"@en ;
-   samm:description "String describing commodity codes. HS Codes are normally digits only. HTS may contain additional characters."@en ;
-   samm:dataType xsd:string .
-
-:CommodityTypeCodeEnum a samm-c:Enumeration ;
-   samm:preferredName "CommodityTypeCodeEnum"@en ;
-   samm:description "Specifies the type of the commodity code."@en ;
-   samm:dataType xsd:string ;
-   samm-c:values ( "HS Code" "GN Code" "TARIC Code" "Intrastat Code" "UNSPC Code" ) .
 

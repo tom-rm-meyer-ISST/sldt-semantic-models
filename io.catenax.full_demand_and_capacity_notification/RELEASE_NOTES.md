@@ -18,6 +18,9 @@ All notable changes to this model will be documented in this file.
   - added logic when a notification can be considered a related notification - TODO: do we need to also consider things that may affect materials that are an input of he current material? What do I do with a relatedNotificationId if I don't have additional information? Do I need to consider also multiple sourceDisruptionIds?
 - leadingRootCauseEnumeration: added thirdPartyMisplanning, insolvency
 - Introduce a Set of Material Entities with materialNumberCustomer, materialNumberSupplier and materialGlobalAssetId
-  - materialNumberSupplier is mandatory
+ - materialNumberSupplier and materialNumberCustomer use the PartIdCharacterstic from PartTypeInformation
+ - materialNumberSupplier is mandatory
+ - materialGlobalAssetId uses the UUID characteristic directly
+
 
 ### Removed
